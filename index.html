@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brew Haven Coffee</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="logo">☕ Brew Haven</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Welcome to Brew Haven</h1>
+    <p>The Best Coffee in Town</p>
+    <a href="#menu" class="btn">View Menu</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-text">
+    <h2>Our Story</h2>
+    <p>
+      At Brew Haven Coffee, we serve handcrafted beverages made from the finest beans.
+      Our café is a warm space for conversations, creativity, and comfort.
+    </p>
+    <p><strong>Hours:</strong> Mon–Sun: 7am – 10pm</p>
+  </div>
+  <img src="images/about.jpg" alt="Coffee shop interior">
+</section>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <h2>Our Menu</h2>
+
+  <div class="menu-grid">
+    <div>
+      <h3>☕ Coffee</h3>
+      <p><strong>Espresso</strong> – ₹120 <br> Rich & bold</p>
+      <p><strong>Cappuccino</strong> – ₹180 <br> Creamy delight</p>
+      <p><strong>Cold Brew</strong> – ₹200 <br> Smooth & chilled</p>
+    </div>
+
+    <div>
+      <h3>🍵 Tea</h3>
+      <p><strong>Masala Tea</strong> – ₹100</p>
+      <p><strong>Green Tea</strong> – ₹120</p>
+    </div>
+
+    <div>
+      <h3>🥤 Cold Drinks</h3>
+      <p><strong>Iced Latte</strong> – ₹190</p>
+      <p><strong>Chocolate Frappe</strong> – ₹220</p>
+    </div>
+
+    <div>
+      <h3>🥐 Snacks</h3>
+      <p><strong>Blueberry Muffin</strong> – ₹150</p>
+      <p><strong>Chocolate Croissant</strong> – ₹170</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="images/g1.jpg" onclick="openLightbox(this.src)">
+    <img src="images/g2.jpg" onclick="openLightbox(this.src)">
+    <img src="images/g3.jpg" onclick="openLightbox(this.src)">
+    <img src="images/g4.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+
+  <p>📍 Ahmedabad, Gujarat</p>
+  <p>📞 +91 98765 43210</p>
+  <p>📧 brewhaven@gmail.com</p>
+
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Brew Haven Coffee</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
