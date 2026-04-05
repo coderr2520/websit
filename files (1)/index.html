@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IRON FORGE — Elite Training. Ahmedabad.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="is-loading">
+
+  <!-- ══ LOADER ══ -->
+  <div class="loader" id="loader">
+    <div class="loader-wordmark">IRON<em>FORGE</em></div>
+    <div class="loader-track"><div class="loader-bar" id="loaderBar"></div></div>
+    <span class="loader-pct" id="loaderPct">0</span>
+  </div>
+
+  <!-- ══ GRAIN ══ -->
+  <canvas class="grain-canvas" id="grainCanvas" aria-hidden="true"></canvas>
+
+  <!-- ══ CURSOR ══ -->
+  <div class="c-dot" id="cDot"></div>
+  <div class="c-ring" id="cRing"></div>
+  <div class="c-text" id="cText"></div>
+
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-wrap">
+
+      <a href="#hero" class="nav-logo">IRON<em>FORGE</em></a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about"        class="nav-item" data-label="About">About</a></li>
+        <li><a href="#services"     class="nav-item" data-label="Services">Services</a></li>
+        <li><a href="#bmi"          class="nav-item" data-label="BMI">BMI</a></li>
+        <li><a href="#pricing"      class="nav-item" data-label="Pricing">Pricing</a></li>
+        <li><a href="#testimonials" class="nav-item" data-label="Results">Results</a></li>
+        <li><a href="#contact"      class="nav-item" data-label="Contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#pricing" class="pill-btn">
+          Join Now
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+        <button class="burger" id="burger" aria-label="Toggle menu">
+          <span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-body">
+        <a href="#about"        class="dl">About<sup>01</sup></a>
+        <a href="#services"     class="dl">Services<sup>02</sup></a>
+        <a href="#bmi"          class="dl">BMI<sup>03</sup></a>
+        <a href="#pricing"      class="dl">Pricing<sup>04</sup></a>
+        <a href="#testimonials" class="dl">Results<sup>05</sup></a>
+        <a href="#contact"      class="dl">Contact<sup>06</sup></a>
+      </div>
+      <div class="drawer-foot">
+        <a href="#pricing" class="cta-block">Start Your Journey →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1800&q=85" alt="" class="hero-bg-img" id="heroImg"/>
+      <div class="hero-bg-vignette"></div>
+      <div class="hero-bg-tint"></div>
+    </div>
+
+    <div class="hero-layout">
+      <header class="hero-header">
+        <div class="kicker">
+          <span class="kicker-line"></span>
+          Est. 2015 &nbsp;·&nbsp; Elite Training Facility &nbsp;·&nbsp; Ahmedabad
+        </div>
+
+        <h1 class="hero-h1">
+          <span class="h1-row"><span class="h1-word" style="--wi:0">Transform</span></span>
+          <span class="h1-row"><span class="h1-word h1-outline" style="--wi:1">Your Body.</span></span>
+          <span class="h1-row"><span class="h1-word" style="--wi:2">Transform</span></span>
+          <span class="h1-row"><span class="h1-word h1-red" style="--wi:3">Your Life.</span></span>
+        </h1>
+
+        <div class="hero-sub-row">
+          <p class="hero-sub">Where champions are forged.<br>Where limits become history.</p>
+          <div class="hero-ctas">
+            <a href="#pricing" class="cta-primary">
+              Join Now
+              <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <a href="#contact" class="cta-secondary">Free Trial →</a>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero-stats">
+      <div class="hstat">
+        <strong><span class="counter" data-to="3500">0</span>+</strong>
+        <span>Active Members</span>
+      </div>
+      <div class="hbar-sep"></div>
+      <div class="hstat">
+        <strong><span class="counter" data-to="48">0</span>+</strong>
+        <span>Expert Trainers</span>
+      </div>
+      <div class="hbar-sep"></div>
+      <div class="hstat">
+        <strong><span class="counter" data-to="9">0</span> yr</strong>
+        <span>Of Excellence</span>
+      </div>
+      <div class="hbar-sep"></div>
+      <div class="hstat">
+        <strong><span class="counter" data-to="98">0</span>%</strong>
+        <span>Retention Rate</span>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue">
+      <div class="sc-track"><div class="sc-thumb"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ══ TICKER ══ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Strength</span><em>—</em>
+      <span>Cardio</span><em>—</em>
+      <span>CrossFit</span><em>—</em>
+      <span>Nutrition</span><em>—</em>
+      <span>Performance</span><em>—</em>
+      <span>Endurance</span><em>—</em>
+      <span>Discipline</span><em>—</em>
+      <span>Power</span><em>—</em>
+      <span>Strength</span><em>—</em>
+      <span>Cardio</span><em>—</em>
+      <span>CrossFit</span><em>—</em>
+      <span>Nutrition</span><em>—</em>
+      <span>Performance</span><em>—</em>
+      <span>Endurance</span><em>—</em>
+      <span>Discipline</span><em>—</em>
+      <span>Power</span><em>—</em>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ABOUT
+  ════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-visual" data-reveal>
+          <div class="av-frame">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="Iron Forge Interior" class="av-main"/>
+            <div class="av-inset">
+              <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&q=80" alt="Training"/>
+            </div>
+            <div class="av-badge">
+              <strong>9+</strong>
+              <span>Years of<br>Power</span>
+            </div>
+          </div>
+          <div class="av-bg-word" aria-hidden="true">FORGE</div>
+        </div>
+
+        <div class="about-text" data-reveal data-delay="0.15">
+          <div class="kicker">
+            <span class="kicker-line"></span>
+            Why Iron Forge
+          </div>
+          <h2 class="section-h2">We don't just build bodies.<br><em>We build legends.</em></h2>
+          <p class="body-copy">Iron Forge isn't just a gym — it's a movement. A community of relentless individuals who refuse to settle. Every square foot of our 15,000 sq ft facility exists to push you further.</p>
+
+          <div class="pillars">
+            <div class="pillar" data-reveal data-delay="0.1">
+              <div class="pillar-num">01</div>
+              <div class="pillar-body">
+                <h4>Certified Trainers</h4>
+                <p>NSCA & NASM certified coaches with 5–20 years of elite-level experience.</p>
+              </div>
+            </div>
+            <div class="pillar" data-reveal data-delay="0.2">
+              <div class="pillar-num">02</div>
+              <div class="pillar-body">
+                <h4>World-Class Equipment</h4>
+                <p>Technogym & Life Fitness. Updated every 18 months, no exceptions.</p>
+              </div>
+            </div>
+            <div class="pillar" data-reveal data-delay="0.3">
+              <div class="pillar-num">03</div>
+              <div class="pillar-body">
+                <h4>Personal Training</h4>
+                <p>1-on-1 sessions engineered around your biology, goals and schedule.</p>
+              </div>
+            </div>
+            <div class="pillar" data-reveal data-delay="0.4">
+              <div class="pillar-num">04</div>
+              <div class="pillar-body">
+                <h4>Diet & Nutrition Plans</h4>
+                <p>Custom macro splits by registered sports nutritionists. Food as fuel.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SERVICES
+  ════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-intro">
+        <div class="kicker" data-reveal>
+          <span class="kicker-line"></span>What We Provide
+        </div>
+        <div class="services-intro-row">
+          <h2 class="section-h2" data-reveal>Built for<br>every <em>warrior.</em></h2>
+          <p class="body-copy services-intro-desc" data-reveal data-delay="0.1">Four disciplines. One facility. Zero excuses. Pick your path to the extraordinary.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scards-viewport">
+      <div class="scards-track" id="sCardsTrack">
+
+        <article class="scard" style="--si:0">
+          <div class="scard-media">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=700&q=85" alt="Weight Training" loading="lazy"/>
+          </div>
+          <div class="scard-content">
+            <span class="scard-idx">01</span>
+            <h3>Weight<br>Training</h3>
+            <p>Compound lifts, hypertrophy, powerlifting — tailored to your strength trajectory.</p>
+            <a href="#pricing" class="scard-cta">Explore <svg viewBox="0 0 20 12" fill="none"><path d="M0 6h18M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="scard" style="--si:1">
+          <div class="scard-media">
+            <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=700&q=85" alt="Cardio" loading="lazy"/>
+          </div>
+          <div class="scard-content">
+            <span class="scard-idx">02</span>
+            <h3>Cardio<br>Zone</h3>
+            <p>Treadmills, rowing, cycling & HIIT arenas. Torch fat and amplify endurance.</p>
+            <a href="#pricing" class="scard-cta">Explore <svg viewBox="0 0 20 12" fill="none"><path d="M0 6h18M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="scard" style="--si:2">
+          <div class="scard-media">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&q=85" alt="CrossFit" loading="lazy"/>
+          </div>
+          <div class="scard-content">
+            <span class="scard-idx">03</span>
+            <h3>CrossFit<br>Box</h3>
+            <p>High-intensity functional movements. Push past your ceiling in our WOD arena.</p>
+            <a href="#pricing" class="scard-cta">Explore <svg viewBox="0 0 20 12" fill="none"><path d="M0 6h18M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="scard" style="--si:3">
+          <div class="scard-media">
+            <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=700&q=85" alt="Personal Coaching" loading="lazy"/>
+          </div>
+          <div class="scard-content">
+            <span class="scard-idx">04</span>
+            <h3>Personal<br>Coaching</h3>
+            <p>Dedicated 1-on-1 attention. Your trainer, program and transformation timeline.</p>
+            <a href="#pricing" class="scard-cta">Explore <svg viewBox="0 0 20 12" fill="none"><path d="M0 6h18M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="container scards-nav">
+      <div class="scards-progress"><div class="scards-prog-fill" id="scardsFill"></div></div>
+      <div class="scards-arrows">
+        <button class="sarrow" id="sPrev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M10 7l-5 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <button class="sarrow" id="sNext" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       BMI CALCULATOR
+  ════════════════════════════════════ -->
+  <section class="bmi-section" id="bmi">
+    <div class="container">
+      <div class="bmi-grid">
+
+        <div class="bmi-left" data-reveal>
+          <div class="kicker">
+            <span class="kicker-line"></span>Health Diagnostics
+          </div>
+          <h2 class="section-h2">Know<br>your<br><em>numbers.</em></h2>
+          <p class="body-copy">Your BMI is the first data point. Our trainers build the full blueprint from there.</p>
+          <div class="bmi-legend">
+            <div class="bll"><div class="bll-dot" style="--c:#4A90D9"></div><div><strong>Underweight</strong><span>BMI &lt; 18.5</span></div></div>
+            <div class="bll"><div class="bll-dot" style="--c:#27AE60"></div><div><strong>Normal</strong><span>18.5 – 24.9</span></div></div>
+            <div class="bll"><div class="bll-dot" style="--c:#E67E22"></div><div><strong>Overweight</strong><span>25 – 29.9</span></div></div>
+            <div class="bll"><div class="bll-dot" style="--c:#C0392B"></div><div><strong>Obese</strong><span>BMI ≥ 30</span></div></div>
+          </div>
+        </div>
+
+        <div class="bmi-right" data-reveal data-delay="0.15">
+          <div class="bmi-card">
+            <div class="bmi-tabs">
+              <button class="btab active" data-u="metric">Metric</button>
+              <button class="btab" data-u="imperial">Imperial</button>
+              <div class="btab-track" id="btabTrack"></div>
+            </div>
+
+            <div class="bmi-inputs">
+              <div class="binput-group">
+                <label>Height</label>
+                <div class="binput-wrap">
+                  <input type="number" id="bHt" placeholder="175" min="1"/>
+                  <span id="htU">cm</span>
+                </div>
+              </div>
+              <div class="binput-group">
+                <label>Weight</label>
+                <div class="binput-wrap">
+                  <input type="number" id="bWt" placeholder="70" min="1"/>
+                  <span id="wtU">kg</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gender-row">
+              <button class="gpill active" data-g="male">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="6"/><path d="M20 4l-5.5 5.5M14.5 4H20v5.5" stroke-linecap="round"/></svg>
+                Male
+              </button>
+              <button class="gpill" data-g="female">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="6"/><path d="M12 15v6M9 18h6" stroke-linecap="round"/></svg>
+                Female
+              </button>
+            </div>
+
+            <button class="cta-primary full-w" id="bmiBtn">Calculate BMI</button>
+
+            <div class="bmi-result" id="bmiResult">
+              <div class="bmi-result-top">
+                <div class="bmi-number" id="bmiNum">—</div>
+                <div class="bmi-cat" id="bmiCat">
+                  <span id="bmiCatLabel">Enter details above</span>
+                  <span id="bmiCatSub" class="bmi-cat-sub"></span>
+                </div>
+              </div>
+              <div class="bmi-gauge">
+                <div class="bmi-gauge-bar">
+                  <div class="bmi-gauge-needle" id="bmiNeedle"></div>
+                </div>
+                <div class="bmi-gauge-labels"><span>10</span><span>18.5</span><span>25</span><span>30</span><span>40</span></div>
+              </div>
+              <p class="bmi-advice" id="bmiAdvice"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       PRICING
+  ════════════════════════════════════ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+
+      <div class="pricing-head" data-reveal>
+        <div class="kicker"><span class="kicker-line"></span>Membership</div>
+        <h2 class="section-h2">Invest in your<br><em>strongest self.</em></h2>
+        <p class="body-copy">Flexible plans for every stage. Cancel anytime.</p>
+      </div>
+
+      <div class="pcards">
+
+        <div class="pcard" data-reveal data-delay="0.05">
+          <div class="pcard-top">
+            <span class="pcard-tier">Starter</span>
+            <div class="pcard-price"><sup>₹</sup>1,499<sub>/mo</sub></div>
+            <p>Perfect for beginning your transformation.</p>
+          </div>
+          <ul class="pcard-features">
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Gym Floor Access</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Cardio Equipment</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Locker Room</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Group Classes (2/wk)</li>
+            <li class="n"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Personal Trainer</li>
+            <li class="n"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Diet Plan</li>
+            <li class="n"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>VIP Access</li>
+          </ul>
+          <a href="#contact" class="pcard-btn">Get Started</a>
+        </div>
+
+        <div class="pcard pcard-pro" data-reveal data-delay="0.15">
+          <div class="pcard-recommended">Most Popular</div>
+          <div class="pcard-top">
+            <span class="pcard-tier">Pro</span>
+            <div class="pcard-price"><sup>₹</sup>2,999<sub>/mo</sub></div>
+            <p>The complete package for serious results.</p>
+          </div>
+          <ul class="pcard-features">
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Everything in Starter</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Unlimited Group Classes</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>4 PT Sessions/month</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Custom Diet Plan</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Monthly Body Analysis</li>
+            <li class="n"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Unlimited PT</li>
+            <li class="n"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>VIP Lounge & Spa</li>
+          </ul>
+          <a href="#contact" class="pcard-btn pcard-btn-red">Join Now</a>
+        </div>
+
+        <div class="pcard" data-reveal data-delay="0.25">
+          <div class="pcard-top">
+            <span class="pcard-tier">Elite</span>
+            <div class="pcard-price"><sup>₹</sup>5,499<sub>/mo</sub></div>
+            <p>Unlimited access. Uncompromising results.</p>
+          </div>
+          <ul class="pcard-features">
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Everything in Pro</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Unlimited PT Sessions</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Weekly Diet Review</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>VIP Lounge & Spa</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Priority Booking</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Supplement Pack</li>
+            <li class="y"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>2 Guest Passes/mo</li>
+          </ul>
+          <a href="#contact" class="pcard-btn">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════ -->
+  <section class="testi" id="testimonials">
+    <div class="container">
+
+      <div class="testi-head" data-reveal>
+        <div class="kicker"><span class="kicker-line"></span>Real Results</div>
+        <h2 class="section-h2">Proof is in the<br><em>transformation.</em></h2>
+      </div>
+
+      <div class="transforms" data-reveal>
+        <div class="tf">
+          <div class="tf-imgs">
+            <div class="tf-img"><img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&q=80" alt="Before"/><span>Before</span></div>
+            <div class="tf-sep">→</div>
+            <div class="tf-img tf-img-after"><img src="https://images.unsplash.com/photo-1569952657524-4de8e8d7cd3a?w=300&q=80" alt="After"/><span>After</span></div>
+          </div>
+          <div class="tf-info"><em>−18 kg</em><span>4 months · Rahul M.</span></div>
+        </div>
+        <div class="tf">
+          <div class="tf-imgs">
+            <div class="tf-img"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=80" alt="Before"/><span>Before</span></div>
+            <div class="tf-sep">→</div>
+            <div class="tf-img tf-img-after"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80" alt="After"/><span>After</span></div>
+          </div>
+          <div class="tf-info"><em>+12 kg muscle</em><span>6 months · Priya S.</span></div>
+        </div>
+        <div class="tf">
+          <div class="tf-imgs">
+            <div class="tf-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Before"/><span>Before</span></div>
+            <div class="tf-sep">→</div>
+            <div class="tf-img tf-img-after"><img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&q=80" alt="After"/><span>After</span></div>
+          </div>
+          <div class="tf-info"><em>−25 kg</em><span>7 months · Arjun K.</span></div>
+        </div>
+      </div>
+
+      <div class="reviews" data-reveal>
+        <div class="review">
+          <div class="r-stars">★★★★★</div>
+          <blockquote>"Iron Forge completely changed my life. The trainers here actually care about your progress. Down 22kg in 5 months — I never thought it was possible."</blockquote>
+          <div class="r-author">
+            <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&q=80" alt="Vikram Patel"/>
+            <div><strong>Vikram Patel</strong><span>Member since 2023</span></div>
+          </div>
+        </div>
+        <div class="review">
+          <div class="r-stars">★★★★★</div>
+          <blockquote>"The Elite membership is worth every rupee. Diet + PT = insane results. 32% body fat to 18% in 6 months. My trainer became my accountability partner."</blockquote>
+          <div class="r-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Sneha Joshi"/>
+            <div><strong>Sneha Joshi</strong><span>Member since 2022</span></div>
+          </div>
+        </div>
+        <div class="review">
+          <div class="r-stars">★★★★★</div>
+          <blockquote>"Best gym in Ahmedabad, period. State-of-the-art equipment, motivating atmosphere and coaches who push you to your absolute limit. Just join."</blockquote>
+          <div class="r-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Mihir Shah"/>
+            <div><strong>Mihir Shah</strong><span>Member since 2021</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CONTACT
+  ════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-left" data-reveal>
+          <div class="kicker"><span class="kicker-line"></span>Get In Touch</div>
+          <h2 class="section-h2">Ready<br>to <em>start?</em></h2>
+          <p class="body-copy">Take the first step. Our team responds within 24 hours to arrange your free trial session.</p>
+
+          <div class="cinfo">
+            <div class="ci">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>15, Bodakdev Cross Road, Ahmedabad 380054</span>
+            </div>
+            <div class="ci">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 11 19.79 19.79 0 011.62 2.38 2 2 0 013.6 0h3a2 2 0 012 1.72 18 18 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.29 6.29l.91-.91a2 2 0 012.11-.45 18 18 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+91 XXXXXXX</span>
+            </div>
+            <div class="ci">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>hello@ironforgeahmedabad.com</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20know%20more%20about%20Iron%20Forge%20membership." target="_blank" rel="noopener" class="wa-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.548!2d72.5205!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwMzEnMDkuOCJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen loading="lazy" title="Iron Forge Gym Location"></iframe>
+          </div>
+        </div>
+
+        <div class="contact-right" data-reveal data-delay="0.15">
+          <form class="cf" id="cf" novalidate>
+            <h3>Send a message</h3>
+            <div class="cf-field">
+              <label for="cfN">Full Name</label>
+              <input type="text" id="cfN" name="name" placeholder="Rahul Mehta" required/>
+            </div>
+            <div class="cf-field">
+              <label for="cfP">Phone Number</label>
+              <input type="tel" id="cfP" name="phone" placeholder="+91 98765 43210" required/>
+            </div>
+            <div class="cf-field">
+              <label for="cfG">Your Goal</label>
+              <select id="cfG" name="goal">
+                <option value="">Select your primary goal</option>
+                <option>Weight Loss</option>
+                <option>Muscle Gain</option>
+                <option>General Fitness</option>
+                <option>Sports Performance</option>
+                <option>Body Recomposition</option>
+              </select>
+            </div>
+            <div class="cf-field">
+              <label for="cfM">Message</label>
+              <textarea id="cfM" name="message" rows="4" placeholder="Tell us about your current routine and goals…"></textarea>
+            </div>
+            <button type="submit" class="cta-primary full-w" id="cfBtn">
+              <span id="cfBtnLabel">Send Message</span>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="cf-ok" id="cfOk">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9" stroke-linecap="round"/></svg>
+              Received! We'll reach out within 24 hours.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner container">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">IRON<em>FORGE</em></a>
+          <p>Where iron meets will.<br>Where results are non-negotiable.</p>
+          <div class="footer-socials">
+            <a href="#" class="fsoc" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="fsoc" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" class="fsoc" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-cols">
+          <div class="fcol">
+            <h5>Navigate</h5>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#bmi">BMI</a>
+            <a href="#pricing">Membership</a>
+            <a href="#testimonials">Results</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="fcol">
+            <h5>Disciplines</h5>
+            <a href="#services">Weight Training</a>
+            <a href="#services">Cardio Zone</a>
+            <a href="#services">CrossFit</a>
+            <a href="#services">Coaching</a>
+            <a href="#services">Nutrition</a>
+            <a href="#services">Group Classes</a>
+          </div>
+          <div class="fcol">
+            <h5>Hours</h5>
+            <div class="fhours">
+              <div><p>Mon – Fri</p><p>5 AM – 11 PM</p></div>
+              <div><p>Saturday</p><p>6 AM – 10 PM</p></div>
+              <div><p>Sunday</p><p>7 AM – 8 PM</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Iron Forge Gym · Ahmedabad, Gujarat</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a><span>·</span><a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-wordmark" aria-hidden="true">IRONFORGE</div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="btt" id="btt" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
